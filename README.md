@@ -6,4 +6,4 @@ Površina i opseg računaju se pozivima odgovarajućih funkcija. Funkcije vraća
 * Provjeriti i da li stranice čine trokut.
 * Površina se računa pomoću Heronove formule.
 
-Zadatak riješiti do 9.00 sati 21.2.
+Zadatak riješiti do 10.10 sati 21.2.

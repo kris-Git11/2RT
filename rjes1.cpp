@@ -1,23 +1,33 @@
-#include "stdafx.h"
-#include <iostream>
+#include <stdio.h>
 #include <string>
+#include <iostream>
+#include <fstream>
+#include <math.h>
 using namespace std;
 
-struct Pravokutnik
+struct trokut
 {
-	double a, b;
-}prav1, prav2;
+   float a, b, c;
+};
 
-double opseg(double a, double b) {
-	return 2 * (a + b);
-}
 
 int main()
 {
-	cout << "Unesite stranice prvog pravokutnika ";
-	cin>> prav1.a >> prav1.b;
-	cout << "Unesite stranice drugog pravokutnika ";
-	cin>> prav2.a >> prav2.b;
-	cout << "Opseg pravokutnika je " << opseg(prav1.a, prav1.b);
+        trokut x;
+        int s;
+        cout << "Unesi stranicu a:";
+        cin >> x.a;
+        cout << "Unesi stranicu b:";
+        cin >> x.b;
+        cout << "Unesi stranicu c:";
+        cin >> x.c;
+        float opseg;
+        float povrsina;
+        s = ((x.a) + (x.b) + (x.c)) / 2;
+        cout << "Poluopseg iznosi: " << s << endl;
+        opseg = (x.a) + (x.b) + (x.c);
+        povrsina = sqrt(s*(s - x.a)*(s - x.b)*(s - x.c));
+        cout <<"Opseg iznosi: "<<opseg << endl;
+        cout <<"Povrsina iznosi: "<<povrsina << endl;
     return 0;
 }

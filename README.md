@@ -1,5 +1,5 @@
 # 2RT-zadatak-1
-strukture i funkcije
+Raznostranični trokut, strukture i funkcije
 
 Napraviti program koji će računati opseg i površinu raznostraničnog trokuta. Podaci za trokut spremljeni su u strukturu.
 Površina i opseg računaju se pozivima odgovarajućih funkcija. Funkcije vraćaju brojeve. Ispis je iz funkcije main().

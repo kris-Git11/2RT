@@ -16,8 +16,7 @@ int main()
 {
 	trokut podaci;
 	int s;
-	float opseg;
-	float povrsina;
+	float opseg, povrsina;
 
 	cout << "Unesi stranicu a:";
 	cin >> podaci.a;

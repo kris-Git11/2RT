@@ -4,7 +4,7 @@
 
 Zadatak 1. Raznostranični trokut, strukture i funkcije (Zadatak riješiti do 10.10 sati 21.2.)
 
-Strukture, polja struktura, funkcije, cijene kutije/paketa proizvoda
+Strukture, funkcije
 
 Napraviti program koji će računati opseg i površinu raznostraničnog trokuta. Podaci za trokut spremljeni su u strukturu. Površina i opseg računaju se pozivima odgovarajućih funkcija. Funkcije vraćaju brojeve. Ispis je iz funkcije main().
 

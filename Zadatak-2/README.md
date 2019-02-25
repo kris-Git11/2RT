@@ -1,6 +1,6 @@
-# 2RT-zadatak-1
+# 2RT-zadatak-2
 
-Strukture
+Strukture, datoteke, polja struktura, stringovi
 
 Deklarirati strukturu Kutija za spremanje slijedećih podataka: naziv proizvoda (može biti više riječi), cijena jediničnog proizvoda bez davanja, broj proizvoda (jediničnih pakiranja) u kutiji. Učitati podatke za 5 kutija, spremiti u polje tipa te strukture i sve podatke (čitavo polje) spremiti u datoteku. Zatvoriti datoteku.
 

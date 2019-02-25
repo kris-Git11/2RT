@@ -1,0 +1,102 @@
+// ConsoleApplication8.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+struct Kutija {
+	string naziv_proizvoda;
+	int cijena_bez_davanja, broj_proizvoda;
+};
+int main()
+{
+	Kutija kutija[5];
+	fstream file;
+	string redak;
+	int br[5];
+
+	file.open("c:\\proba\\kutija.txt");
+	for (int i = 0; i < 5; i++) {
+		cout << "Upisi naziv proizvoda: ";
+		cin >> kutija[i].naziv_proizvoda;
+		file << kutija[i].naziv_proizvoda << "//";
+
+		cout << "Upisi cijenu jedini?nog proizvoda: ";
+		cin >> kutija[i].cijena_bez_davanja;
+		file << kutija[i].cijena_bez_davanja << " ";
+
+		cout << "Upisi broj proizvoda: ";
+		cin >> kutija[i].broj_proizvoda;
+		file << kutija[i].broj_proizvoda << endl;
+	}
+	file.close();
+
+	file.open("c:\\proba\\kutija.txt");
+
+	string polje[5];
+	int y = 0;
+	int cijena;
+	int cijenaend[5];
+	int broj_proizvoda;
+	int broj_proizvodaend[5];
+
+	while (!file.eof()) {
+		getline(file, redak);
+		polje[y] = redak;
+		y++;
+	}
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 50; j++) {
+			if ((polje[j] == "/") && (polje[j + 1] == "/")) {
+				j = j + 3;
+				cijena = 0;
+				broj_proizvoda = 0;
+				for (int x = 0; x < 1; j++) {
+					if (polje[j] != " ") {
+						cijena = cijena + (atoi((polje[j].c_str() - 48)));
+						j++;
+					}
+					else {
+						cijenaend[i] = cijena;
+						x = 1;
+					}
+				}
+				for (int x = 0; x < 1; j++) {
+					if (polje[j] != " ") {
+						broj_proizvoda = broj_proizvoda + (atoi((polje[j].c_str() - 48)));
+						j++;
+					}
+					else {
+						broj_proizvodaend[i] = broj_proizvoda;
+						x = 1;
+					}
+				}
+			}
+		}
+	}
+
+	for (int i = 0; i < 5; i++) {
+		cout << cijenaend[i] << endl;
+		cout << broj_proizvodaend[i] << endl;
+	}
+
+	for (int i = 1; i < 5; ++i)
+	{
+		for (int j = 0; j < (5 - i); ++j)
+			if (br[j] > br[j + 1])
+			{
+				int temp = br[j];
+				br[j] = br[j + 1];
+				br[j + 1] = temp;
+			}
+	}
+	for (int i = 0; i < 5; i++) {
+		cout << br[i] << endl;
+	}
+
+	return 0;
+}

@@ -23,11 +23,14 @@ int main()
 		cout << endl;
 	}
 	fstream file;
-	file.open("C:\\Users\\Asus\\Desktop\\novo\\new.txt", ios::trunc);
+	file.open("C:\\Users\\Asus\\Desktop\\novo\\new.txt", ios::app);
 	for (int i = 0;i < 5;i++) {
-		file << "Naziv pakiranja: " << k[i].naziv << endl;
-		file << "Cijena pojedinog proizvoda u pakiranju (bez poreza): " << k[i].cijena << endl;
-		file << "Broj proizvoda u pakiranju: " << k[i].broj << endl;
+		file << "Naziv pakiranja: ";
+		file << k[i].naziv << endl;
+		file << "Cijena pojedinog proizvoda u pakiranju (bez poreza): ";
+		file << k[i].cijena << endl;
+		file << "Broj proizvoda u pakiranju: ";
+		file << k[i].broj << endl;
 		file << endl;
 	}
 	file.close();

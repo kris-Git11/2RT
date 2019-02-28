@@ -1,0 +1,36 @@
+// ConsoleApplication37.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+class Kutija{
+private:
+	int kuglice[3];
+public:
+	int UpisKuglica();
+	int ProvjeraKuglica();
+};
+
+int Kutija::UpisKuglica(){
+	cout << "Upisi crvene: "; cin >> kuglice[0];
+	cout << "Upisi plave: "; cin >> kuglice[1];
+	cout << "Upisi zelene: "; cin >> kuglice[2];
+}
+int Kutija::ProvjeraKuglica(){
+	if()
+}
+
+int main()
+{
+	Kutija kut1,kut2,kut3;
+
+	cout << "Upisi kuglice u kutiju 1: "; kut1.UpisKuglica();
+	cout << "Upisi kuglice u kutiju 2: "; kut2.UpisKuglica();
+	cout << "Upisi kuglice u kutiju 3: "; kut3.UpisKuglica();
+
+	if(kut1.ProvjeraKuglica < kut2.ProvjeraKuglica)
+	return 0;
+}

@@ -23,7 +23,7 @@ K2 najviše zelenih
 K3 najviše crvenih
 Najviše crvenih kutija K3 
 
-Rok za rješavanje zadatka: četvrtak 28.2. 08.55 h.
+Rok za rješavanje zadatka: četvrtak 28.2. 10.45 h.
 
 
 

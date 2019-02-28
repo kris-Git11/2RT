@@ -1,0 +1,112 @@
+// ConsoleApplication3.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+class Kutija {
+public:
+	string naziv;
+	int c, z, p;
+	int zbroj() { return c + z + p; };
+	double usporedba() {
+		if (c > z && c > p)
+			return 1;
+		else if (z > c && z > p)
+			return 2;
+		else if (p > c && p > z)
+			return 3;
+		else if (c == z && c > p)
+			return 4;
+		else if (c == p && c > z)
+			return 5;
+		else if (z == p && z > c)
+			return 6;
+		else
+			return 7;
+	};
+};
+
+
+
+int main()
+{
+	Kutija k[3];
+	for (int i = 0; i < 3; i++) {
+		cout << "Unesi naziv kutije: "; cin >> k[i].naziv;
+		cout << "Unesi koliko ima crvenih kuglica u kutiji: "; cin >> k[i].c;
+		cout << "Unesi koliko ima zelenih kuglica u kutiji: "; cin >> k[i].z;
+		cout << "Unesi koliko ima plavih kuglica u kutiji: "; cin >> k[i].p;
+	}
+	cout << endl;
+	for (int i = 0;i < 3;i++) {
+		cout << "Ukupan broj kuglica u kutiji naziva " << k[i].naziv << ": ";
+		cout << k[i].zbroj() << endl;
+	}
+	cout << endl;
+	for (int i = 0;i < 3;i++) {
+		string a;
+		if (k[i].usporedba() == 1)
+			a = "crvenih";
+		else if (k[i].usporedba() == 2)
+			a = "zelenih";
+		else if (k[i].usporedba() == 3)
+			a = "plavih";
+		else if (k[i].usporedba() == 4)
+			a = "crvenih i zelenih";
+		else if (k[i].usporedba() == 5)
+			a = "crvenih i plavih";
+		else if (k[i].usporedba() == 6)
+			a = "zelenih i plavih";
+		if (k[i].usporedba() != 7)
+			cout << "U kutiji naziva " << k[i].naziv << " ima najvise " << a << " kuglica." << endl;
+		else
+			cout << "Kutija naziva " << k[i].naziv << " ima jednak broj svih boja kuglica." << endl;
+	}
+	cout << endl;
+	string b, d, e;
+	int c;
+	if (k[0].c > k[1].c && k[0].c > k[2].c) {
+		b = "prva";
+		c = 0;
+	}
+	else if (k[1].c > k[0].c && k[1].c > k[2].c) {
+		b = "druga";
+		c = 1;
+	}
+	else if (k[2].c > k[0].c && k[2].c > k[1].c) {
+		b = "treca";
+		c = 2;
+	}
+	else if (k[0].c == k[1].c && k[0].c > k[2].c) {
+		b = "prva i druga";
+		c = 3;
+		d = k[0].naziv;
+		e = k[1].naziv;
+	}
+	else if (k[0].c == k[2].c && k[0].c > k[1].c) {
+		b = "prva i treca";
+		c = 3;
+		d = k[0].naziv;
+		e = k[21].naziv;
+	}
+	else if (k[1].c == k[2].c && k[1].c > k[0].c) {
+		b = "druga i treca";
+		c = 3;
+		d = k[1].naziv;
+		e = k[2].naziv;
+	}
+	else
+		c = 4;
+	if (c < 3)
+		cout << "Najvise crvenih kuglica ima " << b << " kutija naziva " << k[c].naziv << "." << endl;
+	else if (c == 3)
+		cout << "Najvise crvenih kuglica imaju " << b << " kutija naziva " << d << " i " << e << "." << endl;
+	else
+		cout << "Sve kutije imaju isti broj crvenih kuglica." << endl;
+	return 0;
+}

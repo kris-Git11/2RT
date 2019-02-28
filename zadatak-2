@@ -1,0 +1,67 @@
+// ConsoleApplication4.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+struct Kutija {
+	string naziv;
+	double cijena, broj;
+};
+
+int main()
+{
+	Kutija k[5];
+	for (int i = 0;i < 5;i++) {
+		cout << "Unesi naziv pakiranja: "; cin >> k[i].naziv;
+		cout << "Unesi cijenu pojedinog proizvoda u pakiranju (bez poreza): "; cin >> k[i].cijena;
+		cout << "Unesi broj proizvoda u pakiranju: "; cin >> k[i].broj;
+		cout << endl;
+	}
+	fstream file;
+	file.open("C:\\Users\\Asus\\Desktop\\novo\\new.txt", ios::trunc);
+	for (int i = 0;i < 5;i++) {
+		file << "Naziv pakiranja: " << k[i].naziv << endl;
+		file << "Cijena pojedinog proizvoda u pakiranju (bez poreza): " << k[i].cijena << endl;
+		file << "Broj proizvoda u pakiranju: " << k[i].broj << endl;
+		file << endl;
+	}
+	file.close();
+
+	for (int i = 0;i < 5;i++) {
+		cout << "Naziv pakiranja: " << k[i].naziv << endl;
+		cout << "Cijena cijelog pakiranja (bez poreza): " << k[i].cijena * k[i].broj << endl;
+		cout << endl;
+	}
+	for (int i = 0;i < 5;i++) {
+		if ((k[i].naziv == "kruh") || (k[i].naziv == "mlijeko")) {
+			k[i].cijena = (k[i].cijena * 0.1) + k[i].cijena;
+		}
+		else {
+			k[i].cijena = (k[i].cijena * 0.4) + k[i].cijena;
+		}
+	}
+	cout << endl;
+	for (int i = 0;i < 4;i++) {
+		for (int j = 0;j < 4;j++) {
+			if (k[j + 1].cijena > k[j].cijena) {
+				double x = k[j].cijena;
+				k[j].cijena = k[j + 1].cijena;
+				k[j + 1].cijena = x;
+				string y = k[j].naziv;
+				k[j].naziv = k[j + 1].naziv;
+				k[j + 1].naziv = y;
+			}
+		}
+	}
+	for (int i = 0;i < 5;i++) {
+		cout << "Naziv pakiranja: " << k[i].naziv << endl;
+		cout << "Cijena pakiranja (s porezom): " << (k[i].cijena)*(k[i].broj) << endl;
+		cout << endl;
+	}
+	return 0;
+}

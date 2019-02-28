@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+class Kutija{
+private:
+	int c, z, p;
+	string ime;
+public:
+	string imeKutije;
+	int brojc;
+	int brojp;
+	int brojz;
+};
+
+
+
+int main()
+{
+	Kutija K1, K2, K3;
+	
+	return 0;
+}

@@ -1,0 +1,55 @@
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+class kutija {
+private:
+	int zelenekuglice;
+	int crvenekuglice;
+	int plavekuglice;
+	string ime;
+public:
+	void unesi();
+	int ukupno();
+	void ispis() { cout << "kutija " << ime << ukupno() << " kuglica"; };
+};
+
+void kutija::unesi() {
+	cout << "unesi ime kutije: ";
+	cin >> ime;
+	cout << "unesi broj crvenih kuglica: ";
+	cin >> crvenekuglice;
+	cout << "unesi broj plavih kuglica: ";
+	cin >> plavekuglice;
+	cout << "unesi broj zelenih kuglica: ";
+	cin >> zelenekuglice;
+}
+
+int kutija::ukupno(){
+	return zelenekuglice + crvenekuglice + plavekuglice;
+}
+
+int main() {
+	kutija k1;
+	kutija k2;
+	kutija k3;
+
+	k1.unesi();
+	k2.unesi();
+	k3.unesi();
+
+	if (k1.ukupno() > k2.ukupno() && k1.ukupno() > k3.ukupno()) {
+		k1.ispis();
+	}
+
+	else if (k2.ukupno() > k1.ukupno() && k2.ukupno() > k3.ukupno()) {
+		k2.ispis();
+	}
+
+	else {
+		k3.ispis();
+	}
+
+
+}

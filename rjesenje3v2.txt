@@ -1,0 +1,65 @@
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+class kutija {
+private:
+	int zelenekuglice;
+	int crvenekuglice;
+	int plavekuglice;
+	string ime;
+public:
+	int crvene() { return crvenekuglice; };
+	void unesi();
+	int ukupno() { return zelenekuglice + crvenekuglice + plavekuglice; };
+	void ispis() { cout << "kutija " << ime <<" ime "<< ukupno() << " kuglica"<<endl; };
+	void najvisekuglica();
+};
+
+void kutija::unesi() {
+	cout << "unesi ime kutije: ";
+	cin >> ime;
+	cout << "unesi broj crvenih kuglica: ";
+	cin >> crvenekuglice;
+	cout << "unesi broj plavih kuglica: ";
+	cin >> plavekuglice;
+	cout << "unesi broj zelenih kuglica: ";
+	cin >> zelenekuglice;
+}
+
+void kutija::najvisekuglica(){
+	cout << "kutija " << ime << " ima najvise ";
+	if (zelenekuglice > crvenekuglice && zelenekuglice > plavekuglice) {
+		cout << "zelenih kuglica" << endl;
+	}
+	else if (plavekuglice > zelenekuglice && plavekuglice > crvenekuglice) {
+		cout << "plavih kuglica" << endl;
+	}
+	else
+		cout << "crvenih kuglica" << endl;
+}
+
+int main() {
+
+	int brojkutija=50;
+	kutija k[50];
+
+	for (int i = 0; i < brojkutija; i = i + 1) {
+		k[i].unesi();
+	}
+	for (int i = 0; i < brojkutija; i = i + 1) {
+		k[i].ispis();
+		k[i].najvisekuglica();
+	}
+	for (int i = 0; i < brojkutija; i = i + 1) {
+		for (int p = 0; p < brojkutija; p = p + 1) {
+			if (k[i].crvene() > k[p].crvene()) {
+			
+			}
+			else{}
+		}
+	}
+
+
+}

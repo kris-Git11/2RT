@@ -1,0 +1,58 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Ucenik {
+private: 
+	string ime, prezime;
+	int ocjena[5];
+public: 
+	void UpisiUcenika()
+	{
+		cout << "Upisi ime ucenika: ";
+		cin >> ime;
+		cout << "Upisi prezime: ";
+		cin >> prezime;
+		cout << "Unesi 5 zakljucnih ocjena: ";
+		for (int i = 0; i < 5; i++)
+			cin >> ocjena[i];
+	}
+	bool DaLiJePozitivno()
+	{
+		int pozitivne = 0;
+		for (int i = 0; i < 5; i++)
+		{
+			if (ocjena[i] > 1 && ocjena[i] < 6)
+				pozitivne++;
+		}
+		if (pozitivne == 5)
+			return true;
+	}
+	void IzracunajProsjek()
+	{
+		int zbroj = 0; double prosjek;
+		for (int i = 0; i < 5; i++)
+			zbroj = zbroj + ocjena[i];
+		prosjek = zbroj / 5.;
+		cout << prosjek;
+	}
+};
+
+int main()
+{
+	Ucenik ucenik[3];
+	for (int i = 0; i < 3; i++)
+	{
+		ucenik[i].UpisiUcenika();
+		if (ucenik[i].DaLiJePozitivno() == true)
+		{
+			ucenik[i].IzracunajProsjek();
+			cout << endl;
+		}
+
+	}
+    return 0;
+}
+

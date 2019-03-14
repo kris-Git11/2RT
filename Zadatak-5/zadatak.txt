@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+class ucenike {
+private:
+	string ime;
+	string prezime;
+	double ocijena;
+public:
+	void upis();
+};
+
+void ucenike::upis(){
+	cout << "unesi ime ucenika ";
+	cin >> ime;
+	cout << "unesi prezime ucenika ";
+	cin >> prezime;
+	for (i = 0; i < 5; i = i + 1) {
+		cout << "unesi " << i << ". ocijenu";
+		cin >> ocijena
+	}
+
+
+
+
+};
+
+int main() {
+
+
+
+
+
+
+}

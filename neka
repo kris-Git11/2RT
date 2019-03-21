@@ -1,0 +1,51 @@
+// ConsoleApplication4.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+class Razlomak {
+private:
+	int broj1, broj2;
+public:
+	Razlomak();//konstruktor bez argumenata
+	Razlomak(int, int);//konstruktor sa argumentima 
+	Razlomak operator+ (const Razlomak&);//za zbrajanje razlomaka
+	Razlomak operator= (const Razlomak&);// za pridruzivanje razlomaka
+	Razlomak operator! ();//za skracivanje
+	void prikazi_podatke();
+};
+
+Razlomak::Razlomak()
+{
+	broj1 = 1, broj2 = 1;
+}
+
+Razlomak::Razlomak(int br, int br2)
+{
+	broj1 = br, broj2 = br2;
+}
+
+Razlomak Razlomak :: operator= (const Razlomak& r) 
+{
+	broj1 = r.broj1;
+	broj2 = r.broj2;
+}
+
+Razlomak Razlomak :: operator+ (const Razlomak& r)
+{
+	
+}
+
+void Razlomak::prikazi_podatke() {
+	cout << broj1 << "/" << broj2 << endl;
+}
+
+int main()
+{
+	Razlomak raz,raz2(3,4);
+	raz.operator+;
+    return 0;
+}
